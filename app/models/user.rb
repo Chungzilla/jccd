@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :inventories
   has_many :products, :through => :inventories
 
+  has_one_attached :profile_picture
+
   validates :first_name, :last_name, :username, :email, :password, presence: true
   
   validates :email, :username, uniqueness: true
