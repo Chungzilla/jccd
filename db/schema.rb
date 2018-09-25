@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2018_09_25_010107) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
+    t.string "hometown"
     t.integer "userable_id"
     t.string "userable_type"
     t.index ["email"], name: "index_users_on_email", unique: true

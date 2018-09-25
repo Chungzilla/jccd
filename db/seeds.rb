@@ -1,12 +1,13 @@
 # # Create Admins
 
-# Admin.create 
+# # Admin.create 
 # User.create(
 #     first_name: 'Jazmine',
 #     last_name: 'Chung',
 #     username: 'Chungie The Cake Dealer',
 #     email: 'jazmine@johnnycupcakes.com',
 #     password: 123456,
+#     hometown: 'New York, NY',
 #     userable_type: 'Admin',
 #     userable_id: 1
 # )

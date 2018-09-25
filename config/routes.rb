@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 
   authenticated do
-    root to: 'categories#index'
+    root to: 'dashboard#index'
   end
 
   root to: 'home#index'

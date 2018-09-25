@@ -1,1 +1,47 @@
+@import "colors";
 @import "bootstrap";
+
+#sidebar {
+    width: 18em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 1em 2em 0em 2em;
+    z-index: 999;
+    background: $raisin;
+    color: $aquamarine;
+    transition: all 0.3s;
+
+    p {
+        color: #fff;
+    }
+    a {
+        color: #fff;
+    }
+}
+
+#content {
+    margin-left: 22em;
+}
+
+.big-list-item {
+    font-size: 125%;
+}
+
+#logo-wrapper {
+    background-color: rgb(255, 235, 252);
+    width: 175px;
+    border-radius: 1em;
+    margin-bottom: -.7em;
+}
+
+.sub-menu {
+    margin: 1em 0em.3em 0em;
+}
+
+.quick-add {
+    margin-left: -2.1em;
+    list-style: none;
+}
+
