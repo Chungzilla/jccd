@@ -16,7 +16,7 @@ local:
 
 # Remember not to checkin your GCS keyfile to a repository
 google:
-service: GCS
+  service: GCS
   credentials: <%= ENV['STORAGE_CREDENTIALS'] %>
   project: <%= ENV['STORAGE_PROJECT'] %>
   bucket: "jccd"
