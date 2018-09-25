@@ -17,11 +17,15 @@
       </div>
       
           <ul class="list-unstyled components">
+
+          <a href="/">
               <p class="big-list-item">Dashboard</p>
-              <% if has_role?("Admin") %>
+          </a>
+
+          <% if has_role?("Admin") %>
             <li>
-              <a href="#courseSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Inventory</a>
-              <ul class="collapse list-unstyled" id="courseSubmenu">
+              <a href="#inventorySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Inventory</a>
+              <ul class="collapse list-unstyled" id="inventorySubmenu">
                 <li>
                   <a href="/courses">- Full List</a>
                 </li>
@@ -31,13 +35,13 @@
               </ul>
             </li>
             <li>
-              <a href="#cohortSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Prouducts</a>
-              <ul class="collapse list-unstyled" id="cohortSubmenu">
+              <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Products</a>
+              <ul class="collapse list-unstyled" id="productSubmenu">
                 <li>
-                  <a href="/products">- Full List</a>
+                  <a href="/products">- All Products</a>
                 </li>
                 <li>
-                  <a href="/products/new">- Add New</a>
+                  <a href="/categories">- Categories</a>
                 </li>
               </ul>
             </li>
@@ -46,23 +50,21 @@
 
               <% if has_role?("CakeDealer") %>
             <li class="big-list-item">
-              <a href="/students/<%= current_user.userable_id %>">My Profile</a>
+              <a href="/cake_dealers/<%= current_user.userable_id %>">My Profile</a>
             </li>
             <li class="big-list-item">
-              <a href="/cohorts">Cohorts</a>
+              <%= link_to 'Inventory', inventory_path(current_user.userable_id) %>
             </li>
             <li class="big-list-item">
-              <a href="/courses">Courses</a>
+              <a href="/products">Products</a>
             </li>
 
               <% end %>  
 
             <li class="big-list-item">
-              <a href="/students">Students</a>
+              <a href="/cake_dealers">Cake Deakers</a>
             </li>
-            <li class="big-list-item">
-              <a href="/instructors">Instructors</a>
-            </li>
+            
 
               <% if has_role?("Admin") %>
 

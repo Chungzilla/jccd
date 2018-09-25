@@ -1,6 +1,6 @@
 class InventoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_inventory, only: [:show, :edit, :update, :destroy]
+  # before_action :set_inventory, only: [:show, :edit, :update, :destroy]
 
   # GET /inventories
   # GET /inventories.json
@@ -10,8 +10,8 @@ class InventoriesController < ApplicationController
 
   # GET /inventories/1
   # GET /inventories/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /inventories/new
   def new
@@ -64,9 +64,9 @@ class InventoriesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_inventory
-      @inventory = Inventory.find(params[:id])
-    end
+    # def set_inventory
+    #   @inventory = Inventory.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inventory_params
