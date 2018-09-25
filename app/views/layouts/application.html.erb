@@ -10,82 +10,116 @@
   </head>
 
   <body>
-    
-      
-        <nav id="sidebar">
-          <div class="sidebar-header">
-              <div id="logo-wrapper">
-              
-              </div>
+    <nav id="sidebar">
+      <div class="sidebar-header">
+
               <h3>JC Cake Dealers</h3>
-          </div>
+      </div>
+      
           <ul class="list-unstyled components">
               <p class="big-list-item">Dashboard</p>
               <% if has_role?("Admin") %>
-              <li>
-                <a href="#courseSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Inventory</a>
-                <ul class="collapse list-unstyled" id="courseSubmenu">
-                  <li>
-                    <a href="/courses">- Full List</a>
-                  </li>
-                  <li>
-                    <a href="/courses/new">- Add New</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#cohortSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Prouducts</a>
-                <ul class="collapse list-unstyled" id="cohortSubmenu">
-                  <li>
-                    <a href="/products">- Full List</a>
-                  </li>
-                  <li>
-                    <a href="/products/new">- Add New</a>
-                  </li>
-                </ul>
-              </li>
+            <li>
+              <a href="#courseSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Inventory</a>
+              <ul class="collapse list-unstyled" id="courseSubmenu">
+                <li>
+                  <a href="/courses">- Full List</a>
+                </li>
+                <li>
+                  <a href="/courses/new">- Add New</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#cohortSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle big-list-item">Prouducts</a>
+              <ul class="collapse list-unstyled" id="cohortSubmenu">
+                <li>
+                  <a href="/products">- Full List</a>
+                </li>
+                <li>
+                  <a href="/products/new">- Add New</a>
+                </li>
+              </ul>
+            </li>
+
               <% end %>
-              <% if has_role?("Student") %>
-              <li class="big-list-item">
-                <a href="/students/<%= current_user.userable_id %>">My Profile</a>
-              </li>
-              <li class="big-list-item">
-                <a href="/cohorts">Cohorts</a>
-              </li>
-              <li class="big-list-item">
-                <a href="/courses">Courses</a>
-              </li>
+
+              <% if has_role?("CakeDealer") %>
+            <li class="big-list-item">
+              <a href="/students/<%= current_user.userable_id %>">My Profile</a>
+            </li>
+            <li class="big-list-item">
+              <a href="/cohorts">Cohorts</a>
+            </li>
+            <li class="big-list-item">
+              <a href="/courses">Courses</a>
+            </li>
+
               <% end %>  
-              <li class="big-list-item">
-                <a href="/students">Students</a>
-              </li>
-              <li class="big-list-item">
-                  <a href="/instructors">Instructors</a>
-              </li>
+
+            <li class="big-list-item">
+              <a href="/students">Students</a>
+            </li>
+            <li class="big-list-item">
+              <a href="/instructors">Instructors</a>
+            </li>
+
               <% if has_role?("Admin") %>
-              <li class="big-list-item">
-                <a href="/admins">Admins</a>
-              </li>
-              <li class="sub-menu big-list-item">Add User</li>
-                <ul class="quick-add">
-                  <li>
-                    <a href="/cake_dealers/new">+ Cake Dealer</a>
-                  </li>
-                  <li>
-                    <a href="/admins/new">+ Admin</a>
-                  </li>
+
+            <li class="big-list-item">
+              <a href="/admins">Admins</a>
+            </li>
+            <li class="sub-menu big-list-item">Add User</li>
+              <ul class="quick-add">
+                <li>
+                  <a href="/cake_dealers/new">+ Cake Dealer</a>
+                </li>
+                <li>
+                  <a href="/admins/new">+ Admin</a>
+                </li>
+
                 <% end %>
-                </ul>
-              </div>
-          </ul>
-        </nav>
+
+              </ul>
+            </l1>
+        </div>
+      </ul>
+    </nav>
         <div id="content">
-            <%= render 'devise/menu/login_nav' %>
+        <nav id="top-nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+         
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cake Dealers</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <ul>
+          <%= render 'devise/menu/login_nav' %>
+          </ul>
+        </div>
+    </nav>
+         
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
+
+
             <%= yield %>
+
+
         </div>
-      </div>
+    
 
   </body>
 </html>

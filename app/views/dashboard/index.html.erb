@@ -1,1 +1,54 @@
 <h1> Yoooooooo! </h1>
+
+<% if has_role?("Admin") %>
+
+
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Cake Dealers</h5>
+        <p class="card-text"><%= @cakedealers.length %></p>
+        <a href="#" class="btn btn-primary">View All</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Outbound Inventory</h5>
+        <p class="card-text"><%= @totalInventory.length %> </p>
+        <a href="#" class="btn btn-primary">View All</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total Tees</h5>
+        <p class="card-text"><%= @cakedealers.length %></p>
+        <a href="#" class="btn btn-primary">View All</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Outbound Inventory</h5>
+        <p class="card-text"><%= @totalInventory.length %> </p>
+        <a href="#" class="btn btn-primary">View All</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<% end %>
