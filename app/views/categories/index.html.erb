@@ -5,21 +5,29 @@
 <h1>Categories</h1>
 
 
-  <tbody>
+<div class="row">
     <% @categories.each do |category| %>
 
       <div class="card" style="width: 18rem;">
-      <%= image_tag image_path("category_tshirt.png"), :class => "card-img-top" %>
 
-        <div class="card-body">
-          <h5 class="card-title"><%= category.name %></h5>
-          <p class="card-text"><%= category.description %></p>
-          <%= link_to 'Edit', edit_category_path(category) %>
+        <% if category.photo.attached? %>
+          <%= image_tag category.photo, :class => "card-img-top" %>
+        <% else %>
+          <%= image_tag image_path("temp_logo.png"), :class => "card-img-top" %>
 
-          <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
+        <% end %>
+
+          <div class="card-body">
+            <h5 class="card-title"><%= category.name %></h5>
+            <p class="card-text"><%= category.description %></p>
+            <%= link_to 'Edit', edit_category_path(category) %>
+
+            <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+
       </div>
     <% end %>
+  </div>
 
    
 
