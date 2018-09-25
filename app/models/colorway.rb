@@ -1,0 +1,2 @@
+class Colorway < ApplicationRecord
+end
