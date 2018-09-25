@@ -1,5 +1,6 @@
 class CakeDealersController < ApplicationController
-  before_action :set_cake_dealer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_cake_dealer, only: [:show, :edit, :update]
 
   # GET /cake_dealers
   # GET /cake_dealers.json
