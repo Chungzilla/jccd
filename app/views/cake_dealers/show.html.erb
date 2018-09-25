@@ -2,3 +2,15 @@
 
 <%= link_to 'Edit', edit_cake_dealer_path(@cake_dealer) %> |
 <%= link_to 'Back', cake_dealers_path %>
+
+<div class="card" style="width: 18rem;">
+<%= image_tag image_path("temp_avatar.jpeg"), :class => "card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @cake_dealer.user.first_name %></h5>
+    <p class="card-text"><%= @cake_dealer.user.hometown %></p>
+
+    <% if has_role?("Admin") %>
+    <%= link_to 'Inventory', inventory_path(@cake_dealer), :class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
