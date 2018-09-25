@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cake Dealers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cake_dealers.each do |cake_dealer| %>
+      <tr>
+        <td><%= link_to 'Show', cake_dealer %></td>
+        <td><%= link_to 'Edit', edit_cake_dealer_path(cake_dealer) %></td>
+        <td><%= link_to 'Destroy', cake_dealer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cake Dealer', new_cake_dealer_path %>

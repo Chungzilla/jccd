@@ -1,0 +1,2 @@
+class CakeDealer < ApplicationRecord
+end

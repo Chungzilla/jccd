@@ -1,0 +1,17 @@
+<%= form_with(model: cake_dealer, local: true) do |form| %>
+  <% if cake_dealer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cake_dealer.errors.count, "error") %> prohibited this cake_dealer from being saved:</h2>
+
+      <ul>
+      <% cake_dealer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :inventories
+  resources :admins
+  resources :cake_dealers
+  resources :products
   devise_for :users
   resources :designs
   resources :categories

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @inventory.user %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @inventory.product %>
+</p>
+
+<p>
+  <strong>Physical count:</strong>
+  <%= @inventory.physical_count %>
+</p>
+
+<p>
+  <strong>Is discrepancy:</strong>
+  <%= @inventory.is_discrepancy %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>
