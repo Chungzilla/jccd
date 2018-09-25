@@ -19,12 +19,14 @@ class CakeDealersController < ApplicationController
 
   # GET /cake_dealers/1/edit
   def edit
+    @cakedealer = CakeDealer.find(params[:id])
   end
 
   # POST /cake_dealers
   # POST /cake_dealers.json
   def create
-    @cake_dealer = CakeDealer.new(cake_dealer_params)
+    @cake_dealer = CakeDealer.new
+    @cake_dealer.build_user(user_params)
 
     respond_to do |format|
       if @cake_dealer.save
@@ -68,7 +70,11 @@ class CakeDealersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def cake_dealer_params
-      params.fetch(:cake_dealer, {})
+    # def cake_dealer_params
+    #   params.fetch(:cake_dealer, {})
+    # end
+
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :username, :email, :password)
     end
 end

@@ -3,4 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  belongs_to :userable, polymorphic: true, optional:true
+
+  has_many :inventories
+  has_many :products, :through => :inventories
+
+  validates :first_name, :last_name, :username, :email, :password, presence: true
+  
+  validates :email, :username, uniqueness: true
 end

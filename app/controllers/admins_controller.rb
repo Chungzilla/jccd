@@ -24,7 +24,8 @@ class AdminsController < ApplicationController
   # POST /admins
   # POST /admins.json
   def create
-    @admin = Admin.new(admin_params)
+    @admin = Admin.new
+    @admin.build_user(user_params)
 
     respond_to do |format|
       if @admin.save
@@ -68,7 +69,11 @@ class AdminsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_params
-      params.fetch(:admin, {})
+    # def admin_params
+    #   params.fetch(:admin, {})
+    # end
+
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :username, :email, :password)
     end
 end
