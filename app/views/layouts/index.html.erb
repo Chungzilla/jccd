@@ -14,6 +14,8 @@
     <body>
         <h1> Hello, World!</h1>
 
-        <a class="nav-item nav-link" <%= link_to 'Login', new_user_session_path  %>    </a>
+        <a class="nav-item nav-link" <%= link_to 'Login', new_user_session_path %>    </a>
+
+        <%= yield %>
     </body>
 </html>
