@@ -4,7 +4,12 @@
 <%= link_to 'Back', cake_dealers_path %>
 
 <div class="card" style="width: 18rem;">
-<%= image_tag image_path("temp_avatar.jpeg"), :class => "card-img-top" %>
+  <% if @cake_dealer.user.photo.attached? %>
+    <%= image_tag @cake_dealer.user.photo, :class => "card-img-top" %>
+  <% else %>
+    <%= image_tag image_path("temp_avatar.jpeg"), :class => "card-img-top" %>
+
+        <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= @cake_dealer.user.first_name %></h5>
     <p class="card-text"><%= @cake_dealer.user.hometown %></p>
