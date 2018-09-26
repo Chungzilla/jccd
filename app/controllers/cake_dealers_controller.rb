@@ -6,6 +6,9 @@ class CakeDealersController < ApplicationController
   # GET /cake_dealers.json
   def index
     @cake_dealers = CakeDealer.all
+    puts '****************'
+    puts @cake_dealers[0].user
+    puts '****************'
   end
 
   # GET /cake_dealers/1

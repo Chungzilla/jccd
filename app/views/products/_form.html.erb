@@ -12,34 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name %>:
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description %>:
     <%= form.text_field :description %>
   </div>
 
   <div class="field">
-    <%= form.label :category_id %>
-    <%= form.text_field :category_id %>
+    <%= form.label :category_id %>:
+    <%= collection_select(:product, :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}) %>
   </div>
 
   <div class="field">
-    <%= form.label :size_id %>
+    <%= form.label :size_id %> (optional):
     <%= form.text_field :size_id %>
   </div>
 
   <div class="field">
-    <%= form.label :colorway_id %>
-    <%= form.text_field :colorway_id %>
+    <%= form.label :colorway_id %> (optional):
+    <%= collection_select(:product, :colorway_id, Colorway.all, :id, :name, {:prompt => 'Choose a color/colorway'}) %>
   </div>
 
   <div class="field">
-    <%= form.label :design_id %>
-    <%= form.text_field :design_id %>
+    <%= form.label :design_id %> (optional):
+    <%= collection_select(:product, :design_id, Design.all, :id, :name, {:prompt => 'Choose a design'}) %>
   </div>
+
+ 
 
   <div class="actions">
     <%= form.submit %>
